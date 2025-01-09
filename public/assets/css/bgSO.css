@@ -1,0 +1,63 @@
+/* BackGround */
+/* Mengatur latar belakang dengan gambar dan gradien */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: 
+        linear-gradient(-45deg, 
+        rgba(25, 43, 75, 1), /* Biru tua */
+        rgba(66, 133, 244, 0.8), /* Biru lebih gelap */
+        rgba(96, 165, 250, 0.9), /* Biru soft */
+        rgba(147, 197, 253, 0.7), /* Biru muda */
+            rgba(191, 219, 254, 0.8), /* Biru muda terang */
+            rgba(25, 43, 75, 1) /* Biru tua */
+            ),
+            url('../assets/img/bg/login_bg.jpg'); /* Tambahkan path gambar Anda */
+    background-size: 300% 300%; /* Ukuran latar belakang diperbesar untuk menciptakan pergerakan gradien yang lebih luas */
+    background-position: 0% 50%; /* Posisi awal gradien */
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Memadukan gambar dengan gradien */
+    animation: gradientMove 20s ease-in-out infinite; /* Animasi pergerakan gradien lebih lambat */
+    z-index: 0; /* Pastikan body dengan background berada paling belakang */
+}
+
+/* Animasi pergerakan gradien */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    20% {
+        background-position: 25% 25%;
+    }
+    40% {
+        background-position: 50% 75%;
+    }
+    60% {
+        background-position: 75% 25%;
+    }
+    80% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Elemen latar belakang blur di dalam pseudo-element */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Mengambil latar belakang dari body */
+    filter: blur(20px); /* Efek blur pada gambar latar */
+    z-index: -1; /* Pastikan latar blur berada di belakang konten */
+}
+/* BackGround */

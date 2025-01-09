@@ -1,0 +1,135 @@
+/* Mengatur latar belakang dengan gambar dan gradien */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background: 
+        linear-gradient(-45deg, 
+            rgba(219, 234, 254, 0.6), /* Transparansi gradien biru */
+            rgba(191, 219, 254, 0.6),
+            rgba(147, 197, 253, 0.6),
+            rgba(96, 165, 250, 0.6)
+        ),
+        url('../img/bg/login_bg.jpg'); /* Tambahkan path gambar Anda */
+    background-size: cover; /* Gambar latar menutupi seluruh layar */
+    background-position: center; /* Posisikan gambar ke tengah */
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Memadukan gambar dengan gradien */
+    animation: gradientMove 15s ease-in-out infinite; /* Animasi halus gradien */
+}
+
+/* Animasi pergerakan gradien */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Elemen latar belakang blur di dalam pseudo-element */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Mengambil latar belakang dari body */
+    filter: blur(10px); /* Efek blur pada gambar latar */
+    z-index: 1; /* Pastikan latar blur berada di belakang */
+}
+
+/* Kotak login transparan tanpa blur */
+.login-box {
+    background: rgba(255, 255, 255, 0.8); /* Transparansi kotak login */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Mengurangi bayangan */
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Kotak login tetap di atas latar belakang */
+    backdrop-filter: none; /* Pastikan tidak ada efek blur di kotak login */
+}
+
+/* Teks dan elemen form */
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border-radius: 20px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #ccc;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+/* Tombol dengan animasi perubahan gradien */
+.btn-primary {
+    background: linear-gradient(25deg, #93c5fd, #60a5fa, #3b82f6, #2563eb, #60a5fa, #93c5fd); /* Gradien biru dengan variasi */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    background-size: 200% 200%; /* Memperbesar area gradien untuk animasi lebih smooth */
+    animation: smoothGradient 10s ease-in-out infinite; /* Animasi perubahan gradien dengan durasi lebih lama */
+    transition: transform 0.3s ease-in-out, background-position 1s linear; /* Menambahkan transisi pada posisi gradien */
+}
+
+/* Animasi pergerakan gradien */
+@keyframes smoothGradient {
+    0% {
+        background-position: 0% 100%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    75% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Efek hover pada tombol dengan warna biru kehijauan dan gerakan gradien */
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2563eb); /* Efek perubahan gradien saat hover */
+    transform: scale(1.05) translateY(-5px); /* Efek pergerakan tombol dengan sedikit terangkat */
+    animation: none; /* Menonaktifkan animasi gradien saat hover */
+    background-position: 100% 0%; /* Mengatur posisi gradien saat hover */
+}
