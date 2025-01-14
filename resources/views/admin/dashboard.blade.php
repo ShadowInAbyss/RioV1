@@ -21,7 +21,7 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                  <h4 class="mb-0">$53k</h4>
+                  <h4 class="mb-0">$103k</h4>
                 </div>
                 <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
                   <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -496,7 +496,6 @@
       @include('layout.footer')
     </div>
 </main>
-  @include('layout.setting')
   <!--   Core JS Files   -->
   @include('layout.jscore')
 </body>

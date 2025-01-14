@@ -10,35 +10,35 @@
         <ul class="navbar-nav">
             <!-- Dashboard -->
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::is('dashboard') ? 'active bg-dark text-white' : '' }}" href="{{ route('dashboard') }}">
+                <a class="nav-link text-dark {{ Request::is('admin/dashboard') ? 'active bg-dark text-white' : '' }}" href="{{ route('admin.dashboard') }}">
                     <i class="material-symbols-rounded">dashboard</i>
                     <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
             <!-- Tables -->
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::is('tables') ? 'active bg-dark text-white' : '' }}" href="{{ route('tables') }}">
+                <a class="nav-link text-dark {{ Request::is('admin/tables') ? 'active bg-dark text-white' : '' }}" href="{{ route('admin.tables') }}">
                     <i class="material-symbols-rounded">table_view</i>
                     <span class="nav-link-text ms-1">Tables</span>
                 </a>
             </li>
             <!-- Laporan -->
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::is('laporan') ? 'active bg-dark text-white' : '' }}" href="{{ route('laporan') }}">
+                <a class="nav-link text-dark {{ Request::is('admin/laporan') ? 'active bg-dark text-white' : '' }}" href="{{ route('admin.laporan') }}">
                     <i class="material-symbols-rounded">receipt_long</i>
                     <span class="nav-link-text ms-1">Laporan</span>
                 </a>
             </li>
-            <!-- Notifications -->
+            {{-- <!-- Notifications -->
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::is('notifications') ? 'active bg-dark text-white' : '' }}" href="{{ route('notifications') }}">
+                <a class="nav-link text-dark {{ Request::is('admin/notifications') ? 'active bg-dark text-white' : '' }}" href="{{ route('admin.notifications') }}">
                     <i class="material-symbols-rounded">notifications</i>
                     <span class="nav-link-text ms-1">Notifications</span>
                 </a>
-            </li>
+            </li> --}}
             <!-- Profile -->
             <li class="nav-item">
-                <a class="nav-link text-dark {{ Request::is('profile') ? 'active bg-dark text-white' : '' }}" href="{{ route('profile') }}">
+                <a class="nav-link text-dark {{ Request::is('admin/profile') ? 'active bg-dark text-white' : '' }}" href="{{ route('admin.profile') }}">
                     <i class="material-symbols-rounded">person</i>
                     <span class="nav-link-text ms-1">Profile</span>
                 </a>
@@ -53,7 +53,6 @@
                     </button>
                 </form>
             </li>
-
         </ul>
     </div>
 </aside>

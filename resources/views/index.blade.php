@@ -4,7 +4,6 @@
   @include('layout.head')
   <link rel="stylesheet" href="../assets/css/LandPage.css">
   <title>Loading...</title>
-
 </head>
 <body>
   <div class="loading-container">

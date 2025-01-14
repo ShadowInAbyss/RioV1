@@ -16,16 +16,22 @@ class AdminMiddleware
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-{
-    if (!Auth::check()) {
-        return redirect()->route('login')->withErrors(['error' => 'Anda harus login terlebih dahulu.']);
+    {
+        // Cek apakah pengguna sudah login
+        if (!Auth::check()) {
+            return redirect()->route('login')->withErrors([
+                'error' => 'Anda harus login terlebih dahulu untuk mengakses halaman ini.',
+            ]);
+        }
+
+        // Cek apakah pengguna memiliki role 'admin'
+        if (Auth::user()->role !== 'admin') {
+            return redirect()->route('landing')->withErrors([
+                'error' => 'Anda tidak memiliki izin untuk mengakses halaman ini.',
+            ]);
+        }
+
+        // Jika lolos semua pengecekan, izinkan akses
+        return $next($request);
     }
-
-    if (Auth::user()->role !== 'admin') {
-        return redirect()->route('landing')->withErrors(['error' => 'Anda tidak memiliki izin untuk mengakses halaman ini.']);
-    }
-
-    return $next($request);
-}
-
 }

@@ -248,7 +248,6 @@
       @include('layout.footer')
     </div>
   </main>
-  @include('layout.setting')
   <!--   Core JS Files   -->
   @include('layout.jscore')
 </body>
