@@ -1,0 +1,136 @@
+/* Tambahkan efek fade-out pada saat meninggalkan halaman */
+body.fade-out {
+    opacity: 0; /* Ubah opacity menjadi 0 untuk efek fade-out */
+    transition: opacity 0.5s ease-in-out; /* Pastikan ada transisi untuk fade-out */
+}
+
+/* Animasi pergerakan gradien */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    20% {
+        background-position: 25% 25%;
+    }
+    40% {
+        background-position: 50% 75%;
+    }
+    60% {
+        background-position: 75% 25%;
+    }
+    80% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animasi fade-in */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in-active {
+    opacity: 1;
+}
+
+/* Animasi fade-out */
+.fade-out-active {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Kotak login transparan tanpa blur */
+.login-box {
+    background: rgba(255, 255, 255, 0.8); /* Transparansi kotak login */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Mengurangi bayangan */
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 2; /* Kotak login tetap di atas latar belakang */
+    backdrop-filter: none; /* Pastikan tidak ada efek blur di kotak login */
+}
+
+/* Teks dan elemen form */
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    border: 2px solid gray; /* Garis tepi */
+    border-radius: 20px; /* Sudut melengkung */
+    padding: 10px 15px; /* Ruang dalam input */
+    width: 100%; /* Mengisi lebar kontainer */
+    box-sizing: border-box; /* Menghitung padding dan border dalam ukuran total */
+    background: rgba(255, 255, 255, 0.6); /* Transparansi latar belakang */
+    color: #333; /* Warna teks */
+    margin-bottom: 20px; /* Spasi di bawah input */
+    outline: none; /* Menonaktifkan outline default */
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Warna border saat fokus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Menambahkan bayangan saat fokus */
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+    color: #666; /* Warna teks placeholder */
+}
+
+/* Tombol dengan animasi perubahan gradien */
+.btn-primary {
+    background: linear-gradient(25deg, #93c5fd, #60a5fa, #3b82f6, #2563eb, #60a5fa, #93c5fd); /* Gradien biru dengan variasi */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+    background-size: 200% 200%; /* Memperbesar area gradien untuk animasi lebih smooth */
+    animation: smoothGradient 10s ease-in-out infinite; /* Animasi perubahan gradien dengan durasi lebih lama */
+    transition: transform 0.3s ease-in-out; /* Menambahkan transisi pada transformasi tombol */
+}
+
+/* Animasi pergerakan gradien */
+@keyframes smoothGradient {
+    0% {
+        background-position: 0% 100%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    75% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Efek hover pada tombol dengan warna biru kehijauan dan gerakan gradien */
+.btn-primary:hover {
+    transform: scale(1.05) translateY(-5px); /* Efek pergerakan tombol dengan sedikit terangkat */
+    background-position: 100% 0%; /* Mengatur posisi gradien saat hover */
+}
